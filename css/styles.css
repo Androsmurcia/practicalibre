@@ -7,12 +7,14 @@
     --gray-sove: #f5f4fa;
 }
 
+html,
 body {
     font-family: 'Roboto', 'sans-serif';
     color: var(--black);
     background-color: var(--gray);
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -27,16 +29,16 @@ header > .container {
     width: 1200px;
     margin: auto;
 }
-header > .container :nth-child(1) {
+header > .container .head {
     display: flex;
     justify-content: space-between;
 }
-header > .container :nth-child(1) > .nav {
+header > .container > .head > .nav {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-header > .container :nth-child(1) > .nav > ul {
+header > .container > .head > .nav > ul {
     display: flex;
     justify-content: center;
     padding: 0;
@@ -55,11 +57,17 @@ header > .container :nth-child(1) > .nav > ul {
 .nav-element {
     list-style: none;
 }
-header > .container :nth-child(1) > :nth-child(2) {
+header > .container > .head > .contact {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 50px;
+    color: var(--gray);
+    text-decoration: none;
+}
+
+.fa-regular {
+    color: var(--gray);
 }
 
 .link,
@@ -70,28 +78,26 @@ header > .container :nth-child(1) > :nth-child(2) {
     color: unset;
 }
 
-.nav-text {
-    color: var(--gray);
-}
-
-header > .container > :nth-child(2) a:hover {
+header > .container > .head > .contact a:hover {
     text-decoration: none;
     color: var(--brand-blue);
 }
-.link:hover,
+
 .nav-text:hover,
 .fa-solid:hover {
     cursor: pointer;
     color: var(--brand-blue);
 }
-
-.link:visited {
-    color: unset;
+.fa-regular:hover {
+    color: var(--brand-blue);
+}
+.link:hover {
+    color: var(--brand-blue);
 }
 
 /* ----------------main---------------------------------------------------------------------- */
 /* -----------------------------------banner--------------- */
-main {
+.index {
     background: #f5f4fa;
     width: 100%;
 }
@@ -156,6 +162,91 @@ main .our-team .features-general p {
     font-family: 'roboto', sans-serif;
     font-weight: 400;
     font-size: 14px;
+    color: var(--gray);
+}
+/* Main portafolio */
+
+.portafolio {
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+}
+main > .sitiosweb {
+    width: 1200px;
+    /* background: #757575; */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+main > .sitiosweb > .filtro {
+    width: 1600px;
+}
+main > .sitiosweb > .filtro > .menu {
+    display: flex;
+    justify-content: center;
+}
+
+main > .sitiosweb > .filtro > .menu ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+main > .sitiosweb > .filtro > .menu ul li {
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+    background: var(--gray-sove);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+        0px 2px 2px rgba(0, 0, 0, 0.12);
+    width: 130px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+}
+
+main > .sitiosweb > .filtro > .menu ul li .link {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+main > .sitiosweb > .filtro > .sitios {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+main > .sitiosweb > .filtro > .sitios ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+}
+
+main > .sitiosweb > .filtro > .sitios ul li {
+    border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+}
+.name {
+    font-family: 'roboto', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 500;
+}
+.charge {
+    font-family: 'roboto', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 400;
     color: var(--gray);
 }
 
@@ -251,11 +342,7 @@ footer {
 }
 footer > #footer-general {
     padding: 60px 0;
-}
-
-.address {
     display: flex;
-    flex-direction: column;
     width: 1200px;
 }
 
@@ -271,10 +358,8 @@ footer > #footer-general {
     text-decoration: none;
 }
 
-.address > :nth-child(2) {
+.address > #mexico {
     width: 231px;
-    display: flex;
-    flex-direction: column;
 }
 
 .address > #mexico p {
@@ -296,4 +381,45 @@ footer > #footer-general {
 
     letter-spacing: 0.03em;
     color: var(--gray);
+}
+
+footer > #footer-general .redes {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+footer > #footer-general .redes h3 {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+footer > #footer-general .redes .icons {
+    display: flex;
+    justify-content: space-between;
+}
+footer > #footer-general .redes .icons a {
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    /* padding: 10px; */
+    width: 50px;
+    height: 50px;
+    outline-style: none;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+footer > #footer-general .redes .icons a i {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+}
+footer > #footer-general .redes .icons a:hover {
+    background: var(--brand-blue);
 }
